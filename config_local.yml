@@ -1,0 +1,30 @@
+project:
+  name: Ozon Code Platform Workplace facade
+  debug: true
+  environment: development
+
+status:
+  host: 0.0.0.0
+  port: 8000
+  livenessPath: /live
+  readinessPath: /ready
+  versionPath: /version
+
+database:
+  host: 127.0.0.1
+  port: 5433
+  user: postgres
+  password: postgres
+  name: bss_workplace_facade
+  sslmode: disable
+  migrations: migrations
+  driver: pgx
+
+kafka:
+  capacity: 512
+  topic: "bss-workplace-events"
+  groupId: "bss-workplace-api"
+  brokers:
+    - "0.0.0.0:9094"
+    - "0.0.0.0:9095"
+    - "0.0.0.0:9096"

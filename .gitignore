@@ -1,0 +1,9 @@
+.env
+.idea
+.idea/
+.cache
+.venv
+bin/
+data/
+main
+kafka_data/

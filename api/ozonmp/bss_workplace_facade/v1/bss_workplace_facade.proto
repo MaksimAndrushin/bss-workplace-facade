@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ozonmp.bss_workplace_api.v1;
+
+import "validate/validate.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/ozonmp/bss-workplace-facade/pkg/bss-workplace-facade;bss_workplace_facade";
+
+message Workplace {
+  uint64 id = 1;
+  string name = 2;
+  uint32 size = 3;
+  google.protobuf.Timestamp created = 4;
+}
+
+message WorkplaceEvent {
+  uint64 id = 1;
+  uint32 event_type = 2;
+  uint32 event_status = 3;
+  Workplace workplace = 4;
+}
